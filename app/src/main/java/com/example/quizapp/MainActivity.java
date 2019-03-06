@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private void updateQuestion() {
 
         total++;
-        if (total>4)
+        if (total>10)
         {
             //open the result activity
             Intent i = new Intent(MainActivity.this, ResultActivity.class);
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                                       @Override
                                       public void run() {
                                           correct++;
-                                          b1.setBackgroundColor(Color.parseColor("#a32222"));
+                                          b1.setBackgroundColor(Color.parseColor("#03A9F4"));
 
                                           updateQuestion();
 
@@ -109,13 +109,20 @@ public class MainActivity extends AppCompatActivity {
                                       b4.setBackgroundColor(Color.GREEN);
                                   }
 
-                                  Handler handler = new Handler();
+                                      Handler handler = new Handler();
+                                      handler.postDelayed(new Runnable() {
+                                      @Override
+                                      public void run() {
+                                          b1.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                          b2.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                          b3.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                          b4.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                          updateQuestion();
 
-                                      b1.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                      b2.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                      b3.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                      b4.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                      updateQuestion();
+                                      }
+                                  }, 1500);
+
+
 
 
 
@@ -144,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                                       @Override
                                       public void run() {
                                           correct++;
-                                          b2.setBackgroundColor(Color.parseColor("#a32222"));
+                                          b2.setBackgroundColor(Color.parseColor("#03A9F4"));
 
                                           updateQuestion();
 
@@ -166,12 +173,18 @@ public class MainActivity extends AppCompatActivity {
                                   }
 
                                   Handler handler = new Handler();
+                                  handler.postDelayed(new Runnable() {
+                                      @Override
+                                      public void run() {
+                                          b1.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                          b2.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                          b3.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                          b4.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                          updateQuestion();
 
-                                      b1.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                      b2.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                      b3.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                      b4.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                      updateQuestion();
+                                      }
+                                  }, 1500);
+
 
 
 
@@ -198,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
                                      @Override
                                      public void run() {
                                          correct++;
-                                         b3.setBackgroundColor(Color.parseColor("#a32222"));
+                                         b3.setBackgroundColor(Color.parseColor("#03A9F4"));
 
                                          updateQuestion();
 
@@ -220,12 +233,18 @@ public class MainActivity extends AppCompatActivity {
                                  }
 
                                  Handler handler = new Handler();
+                                 handler.postDelayed(new Runnable() {
+                                     @Override
+                                     public void run() {
+                                         b1.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                         b2.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                         b3.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                         b4.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                         updateQuestion();
 
-                                     b1.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                     b2.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                     b3.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                     b4.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                     updateQuestion();
+                                     }
+                                 }, 1500);
+
 
 
 
@@ -253,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
                                      @Override
                                      public void run() {
                                          correct++;
-                                         b4.setBackgroundColor(Color.parseColor("#a32222"));
+                                         b4.setBackgroundColor(Color.parseColor("#03A9F4"));
 
                                          updateQuestion();
 
@@ -275,12 +294,18 @@ public class MainActivity extends AppCompatActivity {
                                  }
 
                                  Handler handler = new Handler();
+                                 handler.postDelayed(new Runnable() {
+                                     @Override
+                                     public void run() {
+                                         b1.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                         b2.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                         b3.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                         b4.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                         updateQuestion();
 
-                                     b1.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                     b2.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                     b3.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                     b4.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                     updateQuestion();
+                                     }
+                                 }, 1500);
+
 
 
 
