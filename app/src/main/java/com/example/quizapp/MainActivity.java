@@ -1,5 +1,6 @@
 package com.example.quizapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -7,6 +8,7 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -43,10 +45,12 @@ public class MainActivity extends AppCompatActivity {
         timerText = (TextView) findViewById(R.id.TimerTexid);
 
         updateQuestion();
-        reverceTimer(30,timerText);
+        reverseTimer(30,timerText);
 
 
     }
+
+    //start question update
 
     private void updateQuestion() {
 
@@ -123,16 +127,6 @@ public class MainActivity extends AppCompatActivity {
                                   }, 1500);
 
 
-
-
-
-
-
-
-
-
-
-
                                   }
                           }
                       });
@@ -186,15 +180,6 @@ public class MainActivity extends AppCompatActivity {
                                   }, 1500);
 
 
-
-
-
-
-
-
-
-
-
                               }
                           }
                       });
@@ -244,15 +229,6 @@ public class MainActivity extends AppCompatActivity {
 
                                      }
                                  }, 1500);
-
-
-
-
-
-
-
-
-
 
 
                              }
@@ -307,15 +283,6 @@ public class MainActivity extends AppCompatActivity {
                                  }, 1500);
 
 
-
-
-
-
-
-
-
-
-
                              }
                          }
                      });
@@ -333,11 +300,12 @@ public class MainActivity extends AppCompatActivity {
             }
     }
 
+    //end question update
 
+    //Start Timmer
 
-
-    public void reverceTimer(int seconds, final TextView tv){
-        new CountDownTimer(seconds * 1000+1000, 1000){
+    public void reverseTimer(int seconds, final TextView tv){
+        new CountDownTimer(seconds * 2000+2000, 1000){
 
             public void onTick(long millisUntilFinished){
                 int seconds = (int) (millisUntilFinished / 1000);
@@ -362,4 +330,38 @@ public class MainActivity extends AppCompatActivity {
         }.start();
 
     }
+    //End Timmer
+
+    //Start BackPressed end the app activity
+
+    public  void onBackPressed(){
+        AlertDialog.Builder alertDialogbuilder = new AlertDialog.Builder(MainActivity.this);
+        alertDialogbuilder.setTitle("Do you want to exit?");
+        alertDialogbuilder.setMessage("Do you want to exit this application");
+        alertDialogbuilder.setIcon(R.drawable.ic_launcher_background);
+        alertDialogbuilder.setCancelable(false);
+        alertDialogbuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                finish();
+
+            }
+        });
+
+        alertDialogbuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+
+                dialog.cancel();
+            }
+        });
+
+        AlertDialog alertDialog = alertDialogbuilder.create();
+        alertDialog.show();
+
+    }
+
+    //End BackPressed end the app activity
 }

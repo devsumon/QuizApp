@@ -18,7 +18,7 @@
             android:padding="10dp"
             android:text="What is this Question ?"
             android:textAlignment="center"
-            android:textColor="#a3a3"
+            android:textColor="#4CAF50"
             android:textSize="14sp"
             android:layout_width="match_parent"
             android:layout_height="140dp"
@@ -42,7 +42,7 @@
                   android:layout_width="0dp"
                   android:layout_height="match_parent"
                   android:layout_weight="1"
-                  android:background="#4CAF50"
+                  android:background="#03A9F4"
                   android:padding="10dp"
                   android:textAlignment="center"
                   android:text="OPTION 1"
@@ -58,7 +58,7 @@
                   android:layout_width="0dp"
                   android:layout_height="match_parent"
                   android:layout_weight="1"
-                  android:background="#a3a3a3"
+                  android:background="#03A9F4"
                   android:padding="10dp"
                   android:textAlignment="center"
                   android:text="OPTION 2"
@@ -86,7 +86,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#a3a3a3"
+                android:background="#03A9F4"
                 android:padding="10dp"
                 android:textAlignment="center"
                 android:text="OPTION 3"
@@ -102,7 +102,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#a3a3a3"
+                android:background="#03A9F4"
                 android:padding="10dp"
                 android:textAlignment="center"
                 android:text="OPTION 4"
@@ -136,5 +136,8 @@
         </LinearLayout>
 
     </LinearLayout>
+
+
+
 
 </RelativeLayout>

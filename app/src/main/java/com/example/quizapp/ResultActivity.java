@@ -20,8 +20,8 @@ public class ResultActivity extends AppCompatActivity {
         Intent i =getIntent();
 
         String questions = i.getStringExtra("total");
-        String correct = i.getStringExtra("correct");
-        String wrong = i.getStringExtra("wrong");
+        String correct   = i.getStringExtra("correct");
+        String wrong     = i.getStringExtra("wrong");
 
         t1.setText(questions);
         t2.setText(correct);
