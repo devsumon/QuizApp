@@ -1,6 +1,8 @@
 package com.example.quizapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -28,4 +30,6 @@ public class ResultActivity extends AppCompatActivity {
         t3.setText(wrong);
 
     }
+
+
 }

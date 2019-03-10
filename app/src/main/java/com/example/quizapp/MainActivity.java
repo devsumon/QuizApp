@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.quizapp.Model.Question;
 import com.google.firebase.database.DataSnapshot;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button b1,b2,b3,b4;
     TextView t1_question,timerText;
+
     int total=0;
     int correct =0;
     DatabaseReference reference;
@@ -36,19 +38,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        b1 =(Button) findViewById(R.id.btn1);
-        b2 =(Button) findViewById(R.id.btn2);
-        b3 =(Button) findViewById(R.id.btn3);
-        b4 =(Button) findViewById(R.id.btn4);
+        b1 = (Button) findViewById(R.id.btn1);
+        b2 = (Button) findViewById(R.id.btn2);
+        b3 = (Button) findViewById(R.id.btn3);
+        b4 = (Button) findViewById(R.id.btn4);
 
-        t1_question =(TextView) findViewById(R.id.QuestionTex);
+        t1_question = (TextView) findViewById(R.id.QuestionTex);
         timerText = (TextView) findViewById(R.id.TimerTexid);
 
+
         updateQuestion();
-        reverseTimer(30,timerText);
+        //change time duration
+        reverseTimer(120, timerText);
 
 
     }
+
+
 
     //start question update
 
@@ -63,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
             i.putExtra("correct",String.valueOf(correct));
             i.putExtra("incorrect",String.valueOf(wrong));
             startActivity(i);
+
         }
         else
             {
@@ -87,13 +94,13 @@ public class MainActivity extends AppCompatActivity {
                               if (b1.getText().toString().equals(question.getAnswer()))
                               {
                                   b1.setBackgroundColor(Color.GREEN);
+                                  Toast.makeText(getApplicationContext(),"Correct",Toast.LENGTH_SHORT).show();
                                   Handler handler = new Handler();
                                   handler.postDelayed(new Runnable() {
                                       @Override
                                       public void run() {
                                           correct++;
                                           b1.setBackgroundColor(Color.parseColor("#03A9F4"));
-
                                           updateQuestion();
 
 
@@ -104,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
                                   //answer is wrong...we will find the correct answer and make it green
 
                                   wrong++;
+                                  Toast.makeText(getApplicationContext(),"Incorrect",Toast.LENGTH_SHORT).show();
                                   b1.setBackgroundColor(Color.RED);
                                   if (b2.getText().toString().equals(question.getAnswer())) {
                                       b2.setBackgroundColor(Color.GREEN);
@@ -140,13 +148,13 @@ public class MainActivity extends AppCompatActivity {
                               if (b2.getText().toString().equals(question.getAnswer()))
                               {
                                   b2.setBackgroundColor(Color.GREEN);
+                                  Toast.makeText(getApplicationContext(),"Correct",Toast.LENGTH_SHORT).show();
                                   Handler handler = new Handler();
                                   handler.postDelayed(new Runnable() {
                                       @Override
                                       public void run() {
                                           correct++;
                                           b2.setBackgroundColor(Color.parseColor("#03A9F4"));
-
                                           updateQuestion();
 
 
@@ -157,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
                                   //answer is wrong...we will find the correct answer and make it green
 
                                   wrong++;
+                                  Toast.makeText(getApplicationContext(),"Incorrect",Toast.LENGTH_SHORT).show();
                                   b2.setBackgroundColor(Color.RED);
                                   if (b1.getText().toString().equals(question.getAnswer())) {
                                       b1.setBackgroundColor(Color.GREEN);
@@ -191,13 +200,13 @@ public class MainActivity extends AppCompatActivity {
                              if (b3.getText().toString().equals(question.getAnswer()))
                              {
                                  b3.setBackgroundColor(Color.GREEN);
+                                 Toast.makeText(getApplicationContext(),"Correct",Toast.LENGTH_SHORT).show();
                                  Handler handler = new Handler();
                                  handler.postDelayed(new Runnable() {
                                      @Override
                                      public void run() {
                                          correct++;
                                          b3.setBackgroundColor(Color.parseColor("#03A9F4"));
-
                                          updateQuestion();
 
 
@@ -208,6 +217,7 @@ public class MainActivity extends AppCompatActivity {
                                  //answer is wrong...we will find the correct answer and make it green
 
                                  wrong++;
+                                 Toast.makeText(getApplicationContext(),"Incorrect",Toast.LENGTH_SHORT).show();
                                  b3.setBackgroundColor(Color.RED);
                                  if (b1.getText().toString().equals(question.getAnswer())) {
                                      b1.setBackgroundColor(Color.GREEN);
@@ -243,13 +253,13 @@ public class MainActivity extends AppCompatActivity {
                              if (b4.getText().toString().equals(question.getAnswer()))
                              {
                                  b4.setBackgroundColor(Color.GREEN);
+                                 Toast.makeText(getApplicationContext(),"Correct",Toast.LENGTH_SHORT).show();
                                  Handler handler = new Handler();
                                  handler.postDelayed(new Runnable() {
                                      @Override
                                      public void run() {
                                          correct++;
                                          b4.setBackgroundColor(Color.parseColor("#03A9F4"));
-
                                          updateQuestion();
 
 
@@ -260,6 +270,7 @@ public class MainActivity extends AppCompatActivity {
                                  //answer is wrong...we will find the correct answer and make it green
 
                                  wrong++;
+                                 Toast.makeText(getApplicationContext(),"Incorrect",Toast.LENGTH_SHORT).show();
                                  b4.setBackgroundColor(Color.RED);
                                  if (b1.getText().toString().equals(question.getAnswer())) {
                                      b1.setBackgroundColor(Color.GREEN);
@@ -305,7 +316,7 @@ public class MainActivity extends AppCompatActivity {
     //Start Timmer
 
     public void reverseTimer(int seconds, final TextView tv){
-        new CountDownTimer(seconds * 2000+2000, 1000){
+        new CountDownTimer(seconds * 1000+1000, 1000){
 
             public void onTick(long millisUntilFinished){
                 int seconds = (int) (millisUntilFinished / 1000);
